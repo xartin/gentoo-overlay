@@ -1,5 +1,5 @@
 # gentoo-overlay
-Gentoo Linux Portage net-nntp overlay for Radarr and Sonarr
+# Gentoo Linux Portage net-nntp overlay for Radarr and Sonarr
 
 Current as of 11/27/2017
 
@@ -7,8 +7,8 @@ Current as of 11/27/2017
 
 [usenet-overlay]
 
-# Gentoo overlay for Valve's Steam client and Steam-based games.
-# Maintainer: anyc (https://github.com/anyc)
+Gentoo Linux Portage net-nntp overlay for Radarr and Sonarr
+Maintainer: xartin (https://github.com/xartin)
 
 location = /usr/local/portage/usenet-overlay
 sync-type = git
