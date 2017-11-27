@@ -15,3 +15,6 @@ sync-uri = https://github.com/xartin/gentoo-overlay.git
 priority = 50  
 auto-sync = Yes  
   
+Credit to https://github.com/y2kbadbug for the modestly outdated ebuilds.
+
+Sincerely ali3nx 
