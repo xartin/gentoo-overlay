@@ -3,15 +3,16 @@
 
 Current as of 11/27/2017
 
-/etc/portage/repos.conf/usenet-overlay.conf
-
-[usenet-overlay]
-
-Gentoo Linux Portage net-nntp overlay for Radarr and Sonarr
-Maintainer: xartin (https://github.com/xartin)
-
-location = /usr/local/portage/usenet-overlay
-sync-type = git
-sync-uri = https://github.com/xartin/gentoo-overlay.git
-priority = 50
-auto-sync = Yes
+/etc/portage/repos.conf/usenet-overlay.conf  
+  
+[usenet-overlay]  
+  
+Gentoo Linux Portage net-nntp overlay for Radarr and Sonarr  
+Maintainer: xartin (https://github.com/xartin)  
+  
+location = /usr/local/portage/usenet-overlay  
+sync-type = git  
+sync-uri = https://github.com/xartin/gentoo-overlay.git  
+priority = 50  
+auto-sync = Yes  
+  
