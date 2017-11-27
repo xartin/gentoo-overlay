@@ -20,7 +20,7 @@ RDEPEND="
 	dev-db/sqlite"
 IUSE="updater"
 MY_PN="NzbDrone"
-S=${WORKDIR}/${MY_PN}
+S=${WORKDIR}/${PN}
 
 pkg_setup() {
 	enewgroup ${PN}
