@@ -1,5 +1,4 @@
-# gentoo-overlay
-# Gentoo Linux Portage net-nntp overlay for Radarr and Sonarr
+# Gentoo Linux Portage overlay for Radarr and Sonarr
 
 Current as of 11/27/2017
 
