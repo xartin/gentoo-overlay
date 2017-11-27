@@ -1,0 +1,52 @@
+#!/sbin/runscript
+# Copyright 1999-2015 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+        need net
+}
+
+run_dir="/var/run/sonarr"
+pidfile="$run_dir/sonarr.pid"
+etc_dir="/etc/sonarr"
+var_dir="/var/sonarr"
+log_dir="/var/log/sonarr"
+log_file="sonarr.log"
+program="$APP_DIR/NzbDrone.exe"
+bin=`which mono`
+
+check_config() {
+    
+    if [ ! -d "${run_dir}" ]; then
+            mkdir "${run_dir}"
+    fi
+
+    # Permission stuff. Should ensure that the daemon user always have write permissions.
+    # Quick and ugly but should get the job done.
+
+    chown -R ${USER}:${GROUP} "${run_dir}"
+        chown -R ${USER}.${GROUP} "${var_dir}"
+    chown -R ${USER}.${GROUP} "${etc_dir}"
+    if [ "${WEBUPDATER}" = "YES" ]; then
+                chown -R ${USER}.${GROUP} "${CODE_DIR}"
+        fi
+}
+
+start() {
+    check_config
+
+        ebegin "Starting Sonarr"
+
+        start-stop-daemon --start --background --make-pidfile --pidfile ${pidfile}\
+        -u ${USER} -g ${GROUP}\
+    --exec ${bin} ${program} -- \
+    --daemon --log=${log_dir}/${log_file} --data_dir ${var_dir}
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping Sonarr"
+        start-stop-daemon --stop --pidfile ${pidfile} --retry 15
+        eend $?
+}
