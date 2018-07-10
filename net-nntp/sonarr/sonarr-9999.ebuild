@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI=6
 
 inherit eutils user systemd
 
@@ -15,7 +15,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
 RDEPEND="
-	>=dev-lang/mono-3.12.1 
+	>=dev-lang/mono-4.4.1.0
 	media-video/mediainfo 
 	dev-db/sqlite"
 IUSE="updater"

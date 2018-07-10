@@ -15,7 +15,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RDEPEND="
-	>=dev-lang/mono-3.12.1 
+	>=dev-lang/mono-4.4.1.0
 	media-video/mediainfo 
 	dev-db/sqlite"
 MY_PN="Radarr"
