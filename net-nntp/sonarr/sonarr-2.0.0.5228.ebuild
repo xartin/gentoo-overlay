@@ -19,7 +19,7 @@ RDEPEND="
 	media-video/mediainfo
 	dev-db/sqlite"
 
-S=${WORKDIR}
+S=${WORKDIR}/${PN}
 MY_PN="Sonarr"
 
 pkg_setup() {
