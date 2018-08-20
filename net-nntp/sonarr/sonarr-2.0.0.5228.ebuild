@@ -15,8 +15,8 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RDEPEND="
-	>=dev-lang/mono-4.4.1.0 
-	media-video/mediainfo 
+	>=dev-lang/mono-4.4.1.0
+	media-video/mediainfo
 	dev-db/sqlite"
 
 S=${WORKDIR}
@@ -29,7 +29,7 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	mv ${MY_PN} ${PN}
+	mv ${MY_PN}-${PV} ${PN}
 }
 
 src_install() {
@@ -46,7 +46,7 @@ src_install() {
 	insopts -m0644 -o root -g root
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
-	
+
 	insinto "/usr/share/"
 	doins -r "${S}"
 
