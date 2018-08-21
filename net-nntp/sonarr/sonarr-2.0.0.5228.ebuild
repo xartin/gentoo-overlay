@@ -6,7 +6,7 @@ EAPI=6
 
 inherit eutils user systemd
 
-SRC_URI="https://github.com/Sonarr/Sonarr/archive/v${PV}.tar.gz"
+SRC_URI="http://download.sonarr.tv/v2/master/mono/NzbDrone.master.${PV}.mono.tar.gz"
 
 DESCRIPTION="Sonarr is a PVR for Usenet and BitTorrent users."
 HOMEPAGE="http://www.sonarr.tv"
@@ -20,7 +20,7 @@ RDEPEND="
 	dev-db/sqlite"
 
 S=${WORKDIR}/${PN}
-MY_PN="Sonarr"
+MY_PN=NzbDrone
 
 pkg_setup() {
 	enewgroup ${PN}
@@ -29,7 +29,7 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	mv ${MY_PN}-${PV} ${PN}
+	mv ${MY_PN} ${PN}
 }
 
 src_install() {

@@ -29,7 +29,7 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	mv ${MY_PN} ${PN}
+	mv ${MY_PN}-${PN} ${PN}
 }
 
 src_install() {
