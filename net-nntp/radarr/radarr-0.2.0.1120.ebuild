@@ -7,7 +7,7 @@ inherit user systemd
 
 SRC_URI="https://github.com/Radarr/Radarr/releases/download/v${PV}/Radarr.develop.${PV}.linux.tar.gz"
 
-DESCRIPTION="A fork of Sonarr to work with movies à la Couchpotato."
+DESCRIPTION="A fork of Sonarr to work with movies a la Couchpotato."
 HOMEPAGE="https://www.radarr.video"
 
 LICENSE="GPL-3"
@@ -15,10 +15,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	>=dev-lang/mono-4.4.1.0
-	media-video/mediainfo 
+	media-video/mediainfo
 	dev-db/sqlite"
 
-MY_PN="Radarr"
+MY_PN=Radarr
 S="${WORKDIR}/${MY_PN}"
 
 pkg_setup() {
@@ -40,8 +40,8 @@ src_install() {
 	insopts -m0644 -o root -g root
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
-        dodir  "/usr/share/${PN}"
-        cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/radarr" || die "Install failed!"
+	dodir  "/usr/share/${PN}"
+	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/radarr" || die "Install failed!"
 
 	systemd_dounit "${FILESDIR}/radarr.service"
 	systemd_newunit "${FILESDIR}/radarr.service" "${PN}@.service"

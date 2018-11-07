@@ -40,8 +40,8 @@ src_install() {
 	insopts -m0644 -o root -g root
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
-        dodir  "/usr/share/${PN}"
-        cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/sonarr" || die "Install failed!"
+	dodir  "/usr/share/${PN}"
+	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/sonarr" || die "Install failed!"
 
 	systemd_dounit "${FILESDIR}/sonarr.service"
 	systemd_newunit "${FILESDIR}/sonarr.service" "${PN}@.service"
