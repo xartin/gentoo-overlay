@@ -1,10 +1,9 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=6
 
-inherit eutils user systemd
+inherit user systemd
 
 SRC_URI="https://github.com/Radarr/Radarr/releases/download/v${PV}/Radarr.develop.${PV}.linux.tar.gz"
 
@@ -19,7 +18,7 @@ RDEPEND="
 	media-video/mediainfo 
 	dev-db/sqlite"
 MY_PN="Radarr"
-S=${WORKDIR}/${PN}
+S=${WORKDIR}/${MY_PN}
 
 src_unpack() {
     unpack ${A}
@@ -44,7 +43,7 @@ src_install() {
 	insinto /etc/logrotate.d
 	insopts -m0644 -o root -g root
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
-	
+
 	insinto "/usr/share/"
 	doins -r "${S}"
 

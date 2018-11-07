@@ -1,14 +1,13 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=6
 
-inherit eutils user systemd
+inherit user systemd
 
 SRC_URI="http://download.sonarr.tv/v2/master/mono/NzbDrone.master.${PV}.mono.tar.gz"
 
-DESCRIPTION="Sonarr is a PVR for Usenet and BitTorrent users."
+DESCRIPTION="Sonarr is a Smart PVR for newsgroup and bittorrent users."
 HOMEPAGE="http://www.sonarr.tv"
 
 LICENSE="GPL-3"
@@ -21,15 +20,11 @@ RDEPEND="
 
 S=${WORKDIR}/${PN}
 MY_PN=NzbDrone
+${MY_PN} ${PN}
 
 pkg_setup() {
 	enewgroup ${PN}
 	enewuser ${PN} -1 -1 /var/lib/sonarr ${PN}
-}
-
-src_unpack() {
-	unpack ${A}
-	mv ${MY_PN} ${PN}
 }
 
 src_install() {

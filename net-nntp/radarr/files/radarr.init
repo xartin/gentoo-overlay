@@ -1,5 +1,5 @@
 #!/sbin/openrc-run
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -28,9 +28,6 @@ check_config() {
     chown -R ${USER}:${GROUP} "${run_dir}"
         chown -R ${USER}.${GROUP} "${var_dir}"
     chown -R ${USER}.${GROUP} "${etc_dir}"
-    if [ "${WEBUPDATER}" = "YES" ]; then
-                chown -R ${USER}.${GROUP} "${CODE_DIR}"
-        fi
 }
 
 start() {
