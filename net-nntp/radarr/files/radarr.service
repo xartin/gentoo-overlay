@@ -1,5 +1,5 @@
 [Unit]
-Description=Radarr Daemon
+Description=A fork of Sonarr to work with movies à la Couchpotato.
 After=syslog.target network.target
 
 [Service]

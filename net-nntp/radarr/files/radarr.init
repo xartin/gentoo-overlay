@@ -10,7 +10,7 @@ depend() {
 run_dir="/var/run/radarr"
 pidfile="$run_dir/radarr.pid"
 etc_dir="/etc/radarr"
-var_dir="/var/radarr"
+var_dir="/var/lib/radarr"
 log_dir="/var/log/radarr"
 log_file="radarr.log"
 program="$APP_DIR/Radarr.exe"

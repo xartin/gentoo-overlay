@@ -9,7 +9,7 @@ depend() {
 run_dir="/var/run/sonarr"
 pidfile="$run_dir/sonarr.pid"
 etc_dir="/etc/sonarr"
-var_dir="/var/sonarr"
+var_dir="/var/lib/sonarr"
 log_dir="/var/log/sonarr"
 log_file="sonarr.log"
 program="$APP_DIR/NzbDrone.exe"

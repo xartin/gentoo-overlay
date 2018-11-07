@@ -1,5 +1,5 @@
 [Unit]
-Description=Sonarr is a PVR for Usenet and BitTorrent users.
+Description=Sonarr is a Smart PVR for newsgroup and bittorrent users.
 After=syslog.target network.target network-online.target
 
 [Service]

@@ -1,14 +1,14 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit user systemd
 
-SRC_URI="http://download.sonarr.tv/v2/master/mono/NzbDrone.master.${PV}.mono.tar.gz"
+SRC_URI="https://download.sonarr.tv/v2/master/mono/NzbDrone.master.${PV}.mono.tar.gz"
 
 DESCRIPTION="Sonarr is a Smart PVR for newsgroup and bittorrent users."
-HOMEPAGE="http://www.sonarr.tv"
+HOMEPAGE="https://www.sonarr.tv"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -18,9 +18,8 @@ RDEPEND="
 	media-video/mediainfo
 	dev-db/sqlite"
 
-${MY_PN} ${PN}
-S=${WORKDIR}/${MY_PN}
 MY_PN=NzbDrone
+S="${WORKDIR}/${MY_PN}"
 
 pkg_setup() {
 	enewgroup ${PN}
@@ -41,9 +40,8 @@ src_install() {
 	insopts -m0644 -o root -g root
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
-
-	insinto "/usr/share/"
-	doins -r "${S}"
+        dodir  "/usr/share/${PN}"
+        cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/sonarr" || die "Install failed!"
 
 	systemd_dounit "${FILESDIR}/sonarr.service"
 	systemd_newunit "${FILESDIR}/sonarr.service" "${PN}@.service"
