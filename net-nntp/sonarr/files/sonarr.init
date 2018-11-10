@@ -36,7 +36,7 @@ start() {
 
         start-stop-daemon --start --background --make-pidfile --pidfile ${pidfile}\
         -u ${USER} -g ${GROUP}\
-    --exec ${bin} --debug ${program} -- \
+    --exec ${bin} ${program} -- \
     --daemon --log=${log_dir}/${log_file} --data_dir ${var_dir}
         eend $?
 }
