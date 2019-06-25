@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+	<email>mcrawford@eliteitminds.com</email>
+	<name>Mike Crawford</name>
+	<description>Primary maintainer</description>
+</maintainer>
+<longdescription>Lidarr is a music collection manager for Usenet and BitTorrent users.</longdescription>
+	<upstream>
+		<remote-id type="github">lidarr/Lidarr</remote-id>
+		<bugs-to>https://github.com/lidarr/Lidarr/issues</bugs-to>
+	</upstream>
+</pkgmetadata>

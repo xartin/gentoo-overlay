@@ -1,0 +1,16 @@
+[Unit]
+Description=Lidarr is a music collection manager for Usenet and BitTorrent users.
+After=syslog.target network.target
+
+[Service]
+User=lidarr
+Group=lidarr
+
+Type=simple
+ExecStart=/usr/bin/mono --debug /usr/share/lidarr/Lidarr.exe -nobrowser
+TimeoutStopSec=20
+KillMode=process
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
