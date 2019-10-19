@@ -1,6 +1,6 @@
 # Gentoo Linux Portage overlay for Lidarr, Radarr and Sonarr
 
-Current as of 12/09/2019
+Current as of 12/10/2019
 
 /etc/portage/repos.conf/usenet-overlay.conf  
   
