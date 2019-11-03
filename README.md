@@ -1,20 +1,15 @@
 # Gentoo Linux Portage overlay for Lidarr, Radarr and Sonarr
 
-Current as of 12/10/2019
+Current as of 03/11/2019
 
-/etc/portage/repos.conf/usenet-overlay.conf  
-  
-[usenet-overlay]  
-  
-Gentoo Linux Portage net-nntp overlay for Radarr and Sonarr  
-Maintainer: xartin (https://github.com/xartin)  
-  
-location = /usr/local/portage/usenet-overlay  
-sync-type = git  
-sync-uri = https://github.com/xartin/gentoo-overlay.git  
-priority = 50  
-auto-sync = Yes  
-  
-Credit to https://github.com/y2kbadbug for the modestly outdated ebuilds.
+Gentoo Linux Portage ebuild overlay for Radarr and Sonarr and Lidarr  
+Maintainer: xartin (https://github.com/xartin) (https://reddit.com/u/xartin)  
+
+Usage
+-----
+
+* Copy `usenet-overlay.conf` from this repository into `/etc/portage/repos.conf/` to use the new [portage sync capabilities](https://wiki.gentoo.org/wiki/Project:Portage/Sync)
+* emaint sync -r usenet-overlay or emerge --sync to download the contents into Gentoo portage repos.  
+
 
 Sincerely ali3nx 
