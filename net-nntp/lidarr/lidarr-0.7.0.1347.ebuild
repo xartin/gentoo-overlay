@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -14,10 +14,10 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RDEPEND="
-        >=dev-lang/mono-4.4.1.0
-        media-video/mediainfo
-        dev-db/sqlite
-        media-libs/chromaprint[tools]"
+	>=dev-lang/mono-4.4.1.0
+	media-video/mediainfo
+	dev-db/sqlite
+	media-libs/chromaprint[tools]"
 
 MY_PN=lidarr
 S="${WORKDIR}/Lidarr"
