@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<repositories version="1.0">
+    <repo quality="experimental" status="unofficial">
+      <name>usenet-overlay</name>
+      <description lang="en">Personal Overlay for Lidarr, Radarr and Sonarr </description>
+      <homepage>https://github.com/xartin/gentoo-overlay</homepage>
+      <owner type="person">
+        <email>mcrawford@eliteitminds.com</email>
+        <name>Michael Crawford</name>
+      </owner>
+      <source type="git">https://github.com/xartin/gentoo-overlay.git</source>
+      <source type="git">git+ssh://git@github.com/xartin/gentoo-overlay.git</source>
+      <feed>https://github.com/xartin/gentoo-overlay/commits/master.atom</feed>
+    </repo>
+</repositories>
