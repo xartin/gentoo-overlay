@@ -18,12 +18,12 @@ RDEPEND="
 	media-video/mediainfo
 	dev-db/sqlite"
 
-MY_PN=NzbDrone
+MY_PN=Sonarr
 S="${WORKDIR}/${MY_PN}"
 
 pkg_setup() {
 	enewgroup ${PN}
-	enewuser ${PN} -1 -1 /var/lib/sonarr ${PN}
+	enewuser ${PN} -1 -1 /var/lib/sonarr-v3 ${PN}
 }
 
 src_install() {
@@ -43,6 +43,6 @@ src_install() {
 	dodir  "/usr/share/${PN}"
 	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/sonarr-v3" || die "Install failed!"
 
-	systemd_dounit "${FILESDIR}/sonarr.service"
-	systemd_newunit "${FILESDIR}/sonarr.service" "${PN}@.service"
+	systemd_dounit "${FILESDIR}/sonarr-v3.service"
+	systemd_newunit "${FILESDIR}/sonar-rv3.service" "${PN}@.service"
 }
