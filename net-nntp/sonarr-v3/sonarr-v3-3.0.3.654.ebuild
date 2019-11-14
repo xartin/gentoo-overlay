@@ -44,5 +44,5 @@ src_install() {
 	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/sonarr-v3" || die "Install failed!"
 
 	systemd_dounit "${FILESDIR}/sonarr-v3.service"
-	systemd_newunit "${FILESDIR}/sonar-rv3.service" "${PN}@.service"
+	systemd_newunit "${FILESDIR}/sonarr-v3.service" "${PN}@.service"
 }
