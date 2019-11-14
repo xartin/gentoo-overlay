@@ -1,0 +1,7 @@
+# Copyright 1999-2018 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+/var/sonarr-v3/.config/NzbDrone/logs/*.log{
+    missingok
+    su sonarr sonarr
+}

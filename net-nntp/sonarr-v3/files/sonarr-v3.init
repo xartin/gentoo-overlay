@@ -1,0 +1,48 @@
+#!/sbin/openrc-run
+# Copyright 1999-2018 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+depend() {
+        need net
+}
+
+run_dir="/var/run/sonarr-v3"
+pidfile="$run_dir/sonarr-v3.pid"
+etc_dir="/etc/sonarr-v3"
+var_dir="/var/lib/sonarr-v3"
+log_dir="/var/log/sonarr-v3"
+log_file="sonarr-v3.log"
+program="$APP_DIR/Sonarr.exe"
+bin=`which mono`
+
+check_config() {
+
+    if [ ! -d "${run_dir}" ]; then
+            mkdir "${run_dir}"
+    fi
+
+    # Permission stuff. Should ensure that the daemon user always have write permissions.
+    # Quick and ugly but should get the job done.
+
+    chown -R ${USER}:${GROUP} "${run_dir}"
+        chown -R ${USER}.${GROUP} "${var_dir}"
+    chown -R ${USER}.${GROUP} "${etc_dir}"
+}
+
+start() {
+    check_config
+
+        ebegin "Starting Sonarr"
+
+        start-stop-daemon --start --background --make-pidfile --pidfile ${pidfile}\
+        -u ${USER} -g ${GROUP}\
+    --exec ${bin} ${program} -- \
+    --daemon --log=${log_dir}/${log_file} --data_dir ${var_dir}
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping Sonarr"
+        start-stop-daemon --stop --pidfile ${pidfile} --retry 15
+        eend $?
+}
