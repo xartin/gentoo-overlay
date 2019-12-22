@@ -24,6 +24,9 @@ RDEPEND="
 	media-libs/fontconfig
 	media-libs/libmediainfo[curl,mms]
 "
+JAVA_PKG_WANT_BUILD_VM="oracle-jdk-bin-1.8"
+JAVA_PKG_WANT_SOURCE=1.8
+JAVA_PKG_WANT_TARGET=1.8
 
 S="${WORKDIR}"
 
