@@ -1,30 +1,27 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-inherit user systemd
+inherit systemd
 
-SRC_URI="https://download.sonarr.tv/v2/master/mono/NzbDrone.master.${PV}.mono.tar.gz"
+SRC_URI="https://github.com/Radarr/Radarr/releases/download/v${PV}/Radarr.develop.${PV}.linux.tar.gz"
 
-DESCRIPTION="Sonarr is a Smart PVR for newsgroup and bittorrent users."
-HOMEPAGE="https://www.sonarr.tv"
+DESCRIPTION="A fork of Sonarr to work with movies a la Couchpotato."
+HOMEPAGE="https://www.radarr.video"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RDEPEND="
+	acct-group/radarr
+	acct-user/radarr
 	>=dev-lang/mono-4.4.1.0
 	media-video/mediainfo
 	dev-db/sqlite"
 
-MY_PN=NzbDrone
+MY_PN=Radarr
 S="${WORKDIR}/${MY_PN}"
-
-pkg_setup() {
-	enewgroup ${PN}
-	enewuser ${PN} -1 -1 /var/lib/sonarr ${PN}
-}
 
 src_install() {
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
@@ -41,8 +38,8 @@ src_install() {
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
 	dodir  "/usr/share/${PN}"
-	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/sonarr" || die "Install failed!"
+	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/radarr" || die "Install failed!"
 
-	systemd_dounit "${FILESDIR}/sonarr.service"
-	systemd_newunit "${FILESDIR}/sonarr.service" "${PN}@.service"
+	systemd_dounit "${FILESDIR}/radarr.service"
+	systemd_newunit "${FILESDIR}/radarr.service" "${PN}@.service"
 }

@@ -3,28 +3,25 @@
 
 EAPI=7
 
-inherit user systemd
+inherit systemd
 
-SRC_URI="https://github.com/Radarr/Radarr/releases/download/v${PV}/Radarr.develop.${PV}.linux.tar.gz"
+SRC_URI="https://download.sonarr.tv/v3/phantom-develop/${PV}/Sonarr.phantom-develop.${PV}.linux.tar.gz"
 
-DESCRIPTION="A fork of Sonarr to work with movies a la Couchpotato."
-HOMEPAGE="https://www.radarr.video"
+DESCRIPTION="Sonarr is a Smart PVR for newsgroup and bittorrent users."
+HOMEPAGE="https://www.sonarr.tv"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RDEPEND="
-	>=dev-lang/mono-4.4.1.0
+	acct-group/sonarr-v3
+	acct-user/sonarr-v3
+	>=dev-lang/mono-4.8.0.524
 	media-video/mediainfo
 	dev-db/sqlite"
 
-MY_PN=Radarr
+MY_PN=Sonarr
 S="${WORKDIR}/${MY_PN}"
-
-pkg_setup() {
-	enewgroup ${PN}
-	enewuser ${PN} -1 -1 /var/lib/radarr ${PN}
-}
 
 src_install() {
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
@@ -41,8 +38,8 @@ src_install() {
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
 	dodir  "/usr/share/${PN}"
-	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/radarr" || die "Install failed!"
+	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/sonarr-v3" || die "Install failed!"
 
-	systemd_dounit "${FILESDIR}/radarr.service"
-	systemd_newunit "${FILESDIR}/radarr.service" "${PN}@.service"
+	systemd_dounit "${FILESDIR}/sonarr-v3.service"
+	systemd_newunit "${FILESDIR}/sonarr-v3.service" "${PN}@.service"
 }

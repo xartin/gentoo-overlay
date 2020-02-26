@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit user systemd
+inherit systemd
 
 SRC_URI="https://download.sonarr.tv/v2/master/mono/NzbDrone.master.${PV}.mono.tar.gz"
 
@@ -14,17 +14,14 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RDEPEND="
+	acct-group/sonarr
+	acct-user/sonarr
 	>=dev-lang/mono-4.4.1.0
 	media-video/mediainfo
 	dev-db/sqlite"
 
 MY_PN=NzbDrone
 S="${WORKDIR}/${MY_PN}"
-
-pkg_setup() {
-	enewgroup ${PN}
-	enewuser ${PN} -1 -1 /var/lib/sonarr ${PN}
-}
 
 src_install() {
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}

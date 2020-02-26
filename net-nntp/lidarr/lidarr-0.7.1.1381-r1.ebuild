@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit user systemd
+inherit systemd
 
 SRC_URI="https://github.com/lidarr/Lidarr/releases/download/v${PV}/Lidarr.master.${PV}.linux.tar.gz"
 
@@ -14,6 +14,8 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 RDEPEND="
+	acct-group/lidarr
+	acct-user/lidarr
 	>=dev-lang/mono-4.4.1.0
 	media-video/mediainfo
 	dev-db/sqlite
@@ -21,11 +23,6 @@ RDEPEND="
 
 MY_PN=lidarr
 S="${WORKDIR}/Lidarr"
-
-pkg_setup() {
-	enewgroup ${PN}
-	enewuser ${PN} -1 -1 /var/lib/lidarr ${PN}
-}
 
 src_install() {
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
