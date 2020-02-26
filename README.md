@@ -2,7 +2,10 @@
 
 Current as of 26/02/2020
 
-Maintainer: xartin / ali3nx (https://github.com/xartin) (https://reddit.com/u/xartin) (https://forums.gentoo.org/profile.php?mode=viewprofile&u=30381)
+Maintainer: xartin / ali3nx
+* (https://github.com/xartin)
+* (https://reddit.com/u/xartin)
+* (https://forums.gentoo.org/profile.php?mode=viewprofile&u=30381)
 
 Usage
 -----
@@ -14,5 +17,5 @@ Usage
 Notes
 -----
 
-This repo has been updated for GLEP 81 QA compliance. Old ebuilds purged 26/02/2020
-(https://www.gentoo.org/glep/glep-0081.html)
+* This repo has been updated for GLEP 81 QA compliance. Old ebuilds purged 26/02/2020
+* (https://www.gentoo.org/glep/glep-0081.html)
