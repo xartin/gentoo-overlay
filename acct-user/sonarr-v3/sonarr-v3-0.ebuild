@@ -6,7 +6,7 @@ EAPI=7
 inherit acct-user
 
 DESCRIPTION="User for sonarr"
-ACCT_USER_HOME=/var/lib/radarr
+ACCT_USER_HOME=/var/lib/sonarr-v3
 ACCT_USER_ID=998
 ACCT_USER_GROUPS=( sonarr-v3 )
 
