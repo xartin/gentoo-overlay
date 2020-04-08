@@ -10,9 +10,14 @@ Maintainer: xartin / ali3nx
 Usage
 -----
 
-* eselect repository can be used to add this repository from the official supported list at https://overlays.gentoo.org or
-* Copy `usenet-overlay.conf` from this repository into `/etc/portage/repos.conf/` to use the new [portage sync capabilities](https://wiki.gentoo.org/wiki/Project:Portage/Sync)
-* `emaint sync -r usenet-overlay` or `emerge --sync` to download the contents into Gentoo portage repos.  
+* The easiest way to add this overlay to any gentoo linux install is using eselect repository
+
+```
+# emerge eselect-repository
+```
+```
+# eselect repository add usenet-overlay git https://github.com/xartin/gentoo-overlay
+```
 
 Notes
 -----
