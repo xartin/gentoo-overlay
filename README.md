@@ -1,6 +1,6 @@
 # Gentoo Linux Portage overlay for Lidarr, Radarr and Sonarr
 
-Current as of 06/07/2020
+Current as of 03/10/2020
 
 Maintainer: xartin / ali3nx
 * (https://github.com/xartin)
@@ -13,10 +13,10 @@ Usage
 * The easiest way to add this overlay to any gentoo linux install is using eselect repository
 
 ```
-# emerge eselect-repository
+# emerge eselect-repository dev-vcs/git
 ```
 ```
-# eselect repository add usenet-overlay git https://github.com/xartin/gentoo-overlay
+# eselect repository enable usenet-overlay
 ```
 
 Notes
