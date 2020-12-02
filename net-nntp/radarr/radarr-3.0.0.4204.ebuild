@@ -5,18 +5,18 @@ EAPI=7
 
 inherit systemd
 
-SRC_URI="https://github.com/Radarr/Radarr/releases/download/v${PV}/Radarr.develop.${PV}.linux.tar.gz"
+SRC_URI="https://github.com/Radarr/Radarr/releases/download/v${PV}/Radarr.master.${PV}.linux-core-x64.tar.gz"
 
 DESCRIPTION="A fork of Sonarr to work with movies a la Couchpotato."
 HOMEPAGE="https://www.radarr.video"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 RDEPEND="
 	acct-group/radarr
 	acct-user/radarr
-	>=dev-lang/mono-4.4.1.0
+	>=dev-lang/mono-6.6.0.161
 	media-video/mediainfo
 	dev-db/sqlite"
 
