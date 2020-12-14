@@ -16,7 +16,6 @@ KEYWORDS="~amd64"
 RDEPEND="
 	acct-group/radarr
 	acct-user/radarr
-	>=dev-lang/mono-6.6.0.161
 	media-video/mediainfo
 	dev-util/lttng-ust
 	dev-db/sqlite"
