@@ -13,7 +13,7 @@ SRC_URI="https://get.filebot.net/${PN}/${MY_PN}_${PV}/${MY_PN}_${PV}-portable.ta
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	|| (
