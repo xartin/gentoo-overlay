@@ -42,5 +42,5 @@ src_install() {
 	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/radarr" || die "Install failed!"
 
 	systemd_dounit "${FILESDIR}/radarr-v3.service"
-	systemd_newunit "${FILESDIR}/radarr-v3.service" "${PN}@.service"
+	systemd_newunit "${FILESDIR}/radarr-v3.service" "${PN}-v3@.service"
 }
