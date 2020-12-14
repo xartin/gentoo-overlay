@@ -3,7 +3,7 @@
 <pkgmetadata>
 <maintainer type="person">
 	<email>mcrawford@eliteitminds.com</email>
-	<name>Mike Crawford</name>
+	<name>Michael Crawford</name>
 	<description>Primary maintainer</description>
 </maintainer>
 <longdescription>A fork of Sonarr to work with movies à la Couchpotato.</longdescription>
