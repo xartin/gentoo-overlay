@@ -5,7 +5,7 @@ EAPI=7
 
 inherit systemd
 
-SRC_URI="https://github.com/Radarr/Radarr/releases/download/v${PV}/Radarr.master.${PV}.linux-core-x64.tar.gz"
+SRC_URI="https://github.com/Radarr/Radarr/releases/download/v${PV}/Radarr.develop.${PV}.linux-core-x64.tar.gz"
 
 DESCRIPTION="A fork of Sonarr to work with movies a la Couchpotato."
 HOMEPAGE="https://www.radarr.video"
