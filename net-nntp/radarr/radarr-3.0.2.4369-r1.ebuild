@@ -27,7 +27,7 @@ S="${WORKDIR}/${MY_PN}"
 
 src_install() {
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
-	newinitd "${FILESDIR}/${PN}-v3.init" ${PN}
+	newinitd "${FILESDIR}/${PN}.init" ${PN}
 
 	keepdir /var/lib/${PN}
 	fowners -R ${PN}:${PN} /var/lib/${PN}
@@ -42,6 +42,6 @@ src_install() {
 	dodir  "/usr/share/${PN}"
 	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/radarr" || die "Install failed!"
 
-	systemd_dounit "${FILESDIR}/radarr-v3.service"
-	systemd_newunit "${FILESDIR}/radarr-v3.service" "${PN}-v3@.service"
+	systemd_dounit "${FILESDIR}/radarr.service"
+	systemd_newunit "${FILESDIR}/radarr.service" "${PN}@.service"
 }

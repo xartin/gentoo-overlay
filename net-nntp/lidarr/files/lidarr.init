@@ -13,7 +13,7 @@ etc_dir="/etc/lidarr"
 var_dir="/var/lib/lidarr"
 log_dir="/var/log/lidarr"
 log_file="lidarr.log"
-program="$APP_DIR/Lidarr.exe"
+program="$APP_DIR/Lidarr"
 bin=`which mono`
 
 check_config() {

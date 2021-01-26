@@ -7,7 +7,7 @@ User=radarr
 Group=radarr
 
 Type=simple
-ExecStart=/usr/bin/mono --debug /usr/share/radarr/Radarr.exe -nobrowser
+ExecStart=/usr/share/radarr/Radarr
 TimeoutStopSec=20
 KillMode=process
 Restart=always

@@ -7,7 +7,7 @@ User=lidarr
 Group=lidarr
 
 Type=simple
-ExecStart=/usr/bin/mono --debug /usr/share/lidarr/Lidarr.exe -nobrowser
+ExecStart=/usr/share/lidarr/Lidarr
 TimeoutStopSec=20
 KillMode=process
 Restart=always

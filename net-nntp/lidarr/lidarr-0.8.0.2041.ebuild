@@ -5,19 +5,19 @@ EAPI=7
 
 inherit systemd
 
-SRC_URI="https://github.com/lidarr/Lidarr/releases/download/v${PV}/Lidarr.master.${PV}.linux.tar.gz"
+SRC_URI="https://github.com/lidarr/Lidarr/releases/download/v${PV}/Lidarr.develop.${PV}.linux-core-x64.tar.gz"
 
 DESCRIPTION="Lidarr is a music collection manager for Usenet and BitTorrent users."
 HOMEPAGE="https://github.com/lidarr/Lidarr"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 RDEPEND="
 	acct-group/lidarr
 	acct-user/lidarr
-	>=dev-lang/mono-4.4.1.0
 	media-video/mediainfo
+	dev-util/lttng-ust
 	dev-db/sqlite
 	media-libs/chromaprint[tools]"
 
