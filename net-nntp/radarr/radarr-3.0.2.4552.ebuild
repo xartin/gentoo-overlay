@@ -14,7 +14,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64"
 RESTRICT="bindist strip test"
-IUSE=""
+
 RDEPEND="
 	acct-group/radarr
 	acct-user/radarr

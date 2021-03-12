@@ -1,5 +1,5 @@
 [Unit]
-Description=Sonarr v3 Development Testing Smart PVR
+Description=Sonarr is a Smart PVR for newsgroup and bittorrent users.
 After=syslog.target network.target network-online.target
 
 [Service]
@@ -7,7 +7,7 @@ User=sonarr
 Group=sonarr
 
 Type=simple
-ExecStart=/usr/bin/mono --debug /usr/share/sonarr-v3/Sonarr.exe -nobrowser
+ExecStart=/usr/bin/mono --debug /usr/share/sonarr/Sonarr.exe -nobrowser
 TimeoutStopSec=20
 KillMode=process
 Restart=on-failure
