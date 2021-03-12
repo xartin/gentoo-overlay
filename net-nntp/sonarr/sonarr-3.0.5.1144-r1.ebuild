@@ -22,7 +22,7 @@ RDEPEND="
 	media-video/mediainfo
 	dev-db/sqlite"
 
-MY_PN=NzbDrone
+MY_PN=Sonarr
 S="${WORKDIR}/${MY_PN}"
 
 src_install() {
