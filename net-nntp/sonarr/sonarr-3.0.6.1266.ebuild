@@ -27,7 +27,7 @@ S="${WORKDIR}/${MY_PN}"
 
 src_install() {
 	newconfd "${FILESDIR}/${PN}.conf" ${PN}
-	newinitd "${FILESDIR}/${PN}-v3.init" ${PN}
+	newinitd "${FILESDIR}/${PN}.init" ${PN}
 
 	keepdir /var/lib/${PN}
 	fowners -R ${PN}:${PN} /var/lib/${PN}
@@ -42,6 +42,6 @@ src_install() {
 	dodir  "/usr/share/${PN}"
 	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/sonarr" || die "Install failed!"
 
-	systemd_dounit "${FILESDIR}/sonarr-v3.service"
-	systemd_newunit "${FILESDIR}/sonarr-v3.service" "${PN}@.service"
+	systemd_dounit "${FILESDIR}/sonarr.service"
+	systemd_newunit "${FILESDIR}/sonarr.service" "${PN}@.service"
 }

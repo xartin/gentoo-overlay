@@ -14,7 +14,6 @@ var_dir="/var/lib/lidarr"
 log_dir="/var/log/lidarr"
 log_file="lidarr.log"
 program="$APP_DIR/Lidarr"
-bin=`which mono`
 
 check_config() {
     
@@ -37,7 +36,7 @@ start() {
 
         start-stop-daemon --start --background --make-pidfile --pidfile ${pidfile}\
         -u ${USER} -g ${GROUP}\
-    --exec ${bin} ${program} -- \
+    --exec ${program} -- \
     --daemon --log=${log_dir}/${log_file} --data_dir ${var_dir}
         eend $?
 }

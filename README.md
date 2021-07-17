@@ -1,6 +1,6 @@
 # Gentoo Linux Portage overlay for Lidarr, Radarr and Sonarr
 
-Current as of 23/06/2021
+Current as of 17/07/2021
 
 Maintainer: xartin / ali3nx
 * (https://github.com/xartin)
