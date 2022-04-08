@@ -1,7 +1,7 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit java-utils-2
 
@@ -13,20 +13,20 @@ SRC_URI="https://get.filebot.net/${PN}/${MY_PN}_${PV}/${MY_PN}_${PV}-portable.ta
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 
 RDEPEND="
 	|| (
-		dev-java/openjdk:11[javafx]
-		dev-java/openjdk:11[javafx]
+		dev-java/openjdk:17[javafx]
+		dev-java/openjdk:17[javafx]
 	)
 	media-libs/chromaprint[tools]
 	media-libs/fontconfig
 	media-libs/libmediainfo[curl,mms]
 "
-JAVA_PKG_WANT_BUILD_VM="openjdk-11"
-JAVA_PKG_WANT_SOURCE=11
-JAVA_PKG_WANT_TARGET=11
+JAVA_PKG_WANT_BUILD_VM="openjdk-17"
+JAVA_PKG_WANT_SOURCE=17
+JAVA_PKG_WANT_TARGET=17
 
 S="${WORKDIR}"
 
