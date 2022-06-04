@@ -1,0 +1,4 @@
+move net-nntp/lidarr www-apps/lidarr
+move net-nntp/radarr www-apps/radarr
+move net-nntp/sonarr www-apps/sonarr
+move net-nntp/tautulli www-apps/tautulli
