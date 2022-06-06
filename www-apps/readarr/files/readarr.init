@@ -1,0 +1,47 @@
+#!/sbin/openrc-run
+# Copyright 1999-2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+depend() {
+        need net
+}
+
+run_dir="/run/reeadarr"
+pidfile="$run_dir/readarr.pid"
+etc_dir="/etc/readarr"
+var_dir="/var/lib/readarr"
+log_dir="/var/log/readarr"
+log_file="readarr.log"
+program="$APP_DIR/Readarr"
+
+check_config() {
+    
+    if [ ! -d "${run_dir}" ]; then
+            mkdir "${run_dir}"
+    fi
+
+    # Permission stuff. Should ensure that the daemon user always have write permissions.
+    # Quick and ugly but should get the job done.
+
+    chown -R ${USER}:${GROUP} "${run_dir}"
+        chown -R ${USER}.${GROUP} "${var_dir}"
+    chown -R ${USER}.${GROUP} "${etc_dir}"
+}
+
+start() {
+    check_config
+
+        ebegin "Starting Readarr"
+
+        start-stop-daemon --start --background --make-pidfile --pidfile ${pidfile}\
+        -u ${USER} -g ${GROUP}\
+    --exec ${program} -- \
+    --daemon --log=${log_dir}/${log_file} --data_dir ${var_dir}
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping Readarr"
+        start-stop-daemon --stop --pidfile ${pidfile} --retry 15
+        eend $?
+}

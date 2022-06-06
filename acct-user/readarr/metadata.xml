@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+	<email>mcrawford@eliteitminds.com</email>
+	<name>Mike Crawford</name>
+	<description>Primary maintainer</description>
+</maintainer>
+<longdescription>Book Manager and Automation (Sonarr for Ebooks)</longdescription>
+	<upstream>
+		<remote-id type="github">Readarr/Readarr</remote-id>
+		<bugs-to>https://github.com/Readarr/Readarr/issues</bugs-to>
+	</upstream>
+</pkgmetadata>

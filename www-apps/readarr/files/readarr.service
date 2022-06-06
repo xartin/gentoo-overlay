@@ -1,0 +1,16 @@
+[Unit]
+Description=Book Manager and Automation (Sonarr for Ebooks)
+After=syslog.target network.target
+
+[Service]
+User=readarr
+Group=readarr
+
+Type=simple
+ExecStart=/usr/share/readarr/Readarr
+TimeoutStopSec=20
+KillMode=process
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
