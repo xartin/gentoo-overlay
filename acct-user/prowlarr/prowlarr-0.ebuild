@@ -5,9 +5,9 @@ EAPI=8
 
 inherit acct-user
 
-DESCRIPTION="User for radarr"
-ACCT_USER_HOME=/var/lib/radarr
+DESCRIPTION="User for prowlarr"
+ACCT_USER_HOME=/var/lib/prowlarr
 ACCT_USER_ID=116
-ACCT_USER_GROUPS=( radarr )
+ACCT_USER_GROUPS=( prowlarr )
 
 acct-user_add_deps

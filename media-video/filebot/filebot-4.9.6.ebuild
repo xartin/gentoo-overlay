@@ -17,8 +17,7 @@ KEYWORDS="amd64"
 
 RDEPEND="
 	|| (
-		dev-java/openjdk:17[javafx]
-		dev-java/openjdk:17[javafx]
+		dev-java/openjdk:17
 	)
 	media-libs/chromaprint[tools]
 	media-libs/fontconfig

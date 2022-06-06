@@ -1,0 +1,16 @@
+[Unit]
+Description=An indexer manager/proxy to integrate with your various PVR apps.
+After=syslog.target network.target
+
+[Service]
+User=prowlarr
+Group=prowlarr
+
+Type=simple
+ExecStart=/usr/share/prowlarr/Prowlarr
+TimeoutStopSec=20
+KillMode=process
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
