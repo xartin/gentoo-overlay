@@ -1,4 +1,5 @@
-# Gentoo Linux Portage overlay for Lidarr, Radarr, Sonarr and Tautulli
+# Gentoo Linux Portage overlay for 
+# Lidarr, Prowlarr, Radarr, Readarr, Sonarr and Tautulli
 
 Current as of 05/06/2022
 
