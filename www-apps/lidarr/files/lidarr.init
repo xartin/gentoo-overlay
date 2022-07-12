@@ -1,48 +1,7 @@
 #!/sbin/openrc-run
-# Copyright 1999-2018 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-depend() {
-        need net
-}
+pidfile="/run/lidarr.pid"
+command="/opt/lidarr/Radarr"
+command_user="lidarr:lidarr"
+command_background=true
 
-run_dir="/var/run/lidarr"
-pidfile="$run_dir/lidarr.pid"
-etc_dir="/etc/lidarr"
-var_dir="/var/lib/lidarr"
-log_dir="/var/log/lidarr"
-log_file="lidarr.log"
-program="$APP_DIR/Lidarr"
-
-check_config() {
-    
-    if [ ! -d "${run_dir}" ]; then
-            mkdir "${run_dir}"
-    fi
-
-    # Permission stuff. Should ensure that the daemon user always have write permissions.
-    # Quick and ugly but should get the job done.
-
-    chown -R ${USER}:${GROUP} "${run_dir}"
-        chown -R ${USER}.${GROUP} "${var_dir}"
-    chown -R ${USER}.${GROUP} "${etc_dir}"
-}
-
-start() {
-    check_config
-
-        ebegin "Starting Lidarr"
-
-        start-stop-daemon --start --background --make-pidfile --pidfile ${pidfile}\
-        -u ${USER} -g ${GROUP}\
-    --exec ${program} -- \
-    --daemon --log=${log_dir}/${log_file} --data_dir ${var_dir}
-        eend $?
-}
-
-stop() {
-        ebegin "Stopping Lidarr"
-        start-stop-daemon --stop --pidfile ${pidfile} --retry 15
-        eend $?
-}

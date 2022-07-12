@@ -16,7 +16,7 @@ HOMEPAGE="https://readarr.com"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~arm"
+KEYWORDS="~amd64 ~arm ~arm64"
 RESTRICT="bindist strip test"
 
 RDEPEND="

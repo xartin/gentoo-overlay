@@ -1,12 +1,15 @@
 ## Gentoo Linux Portage overlay for
-**Filebot, Lidarr, Prowlarr, Radarr, Readarr, Sonarr and Tautulli**
+**Filebot, Lidarr, Readarr, Tautulli**
 
-Current as of 05/06/2022
+**Radarr, Sonarr and Prowlarr have been**
+**Merged in the official Gentoo repo**
+
+Current as of 12/07/2022
 
 Maintainer: xartin / ali3nx
 * (https://github.com/xartin)
 * (https://reddit.com/u/xartin)
-* (https://forums.gentoo.org/profile.php?mode=viewprofile&u=30381)
+* (https://wiki.gentoo.org/wiki/User:Ali3nx)
 
 Usage
 -----
