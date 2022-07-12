@@ -23,20 +23,26 @@ RESTRICT="bindist strip test"
 RDEPEND="
 	acct-group/lidarr
 	acct-user/lidarr
-	dev-util/lttng-ust
-	dev-db/sqlite
-	media-libs/chromaprint[tools]"
+	dev-libs/icu
+	dev-util/lttng-ust:0
+	dev-db/sqlite"
+
+QA_PREBUILT="*"
 
 S="${WORKDIR}/Lidarr"
+
+src_prepare() {
+	default
+
+	# https://github.com/dotnet/runtime/issues/57784
+	rm libcoreclrtraceptprovider.so Lidarr.Update/libcoreclrtraceptprovider.so || die
+}
 
 src_install() {
 	newinitd "${FILESDIR}/${PN}.init" ${PN}
 
 	keepdir /var/lib/${PN}
 	fowners -R ${PN}:${PN} /var/lib/${PN}
-
-	insinto /etc/${PN}
-	insopts -m0660 -o ${PN} -g ${PN}
 
 	insinto /etc/logrotate.d
 	insopts -m0644 -o root -g root

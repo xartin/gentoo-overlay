@@ -16,35 +16,40 @@ HOMEPAGE="https://readarr.com"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64"
+KEYWORDS="~amd64"
 RESTRICT="bindist strip test"
 
 RDEPEND="
 	acct-group/readarr
 	acct-user/readarr
+	media-video/mediainfo
 	dev-libs/icu
-	dev-util/lttng-ust
+	dev-util/lttng-ust:0
 	dev-db/sqlite"
 
-MY_PN=Readarr
-S="${WORKDIR}/${MY_PN}"
+QA_PREBUILT="*"
+
+S="${WORKDIR}/Readarr"
+
+src_prepare() {
+	default
+
+	# https://github.com/dotnet/runtime/issues/57784
+	rm libcoreclrtraceptprovider.so Readarr.Update/libcoreclrtraceptprovider.so || die
+}
 
 src_install() {
-	newconfd "${FILESDIR}/${PN}.conf" ${PN}
 	newinitd "${FILESDIR}/${PN}.init" ${PN}
 
 	keepdir /var/lib/${PN}
 	fowners -R ${PN}:${PN} /var/lib/${PN}
 
-	insinto /etc/${PN}
-	insopts -m0660 -o ${PN} -g ${PN}
-
 	insinto /etc/logrotate.d
 	insopts -m0644 -o root -g root
 	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
-	dodir  "/usr/share/${PN}"
-	cp -R "${WORKDIR}/${MY_PN}/." "${D}/usr/share/readarr" || die "Install failed!"
+	dodir  "/opt/${PN}"
+	cp -R "${S}/." "${D}/opt/readarr" || die "Install failed!"
 
 	systemd_dounit "${FILESDIR}/readarr.service"
 	systemd_newunit "${FILESDIR}/readarr.service" "${PN}@.service"
