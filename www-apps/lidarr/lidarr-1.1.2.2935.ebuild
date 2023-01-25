@@ -6,10 +6,10 @@ EAPI=8
 inherit systemd
 
 SRC_URI="
-	x86? ( https://github.com/lidarr/Lidarr/releases/download/v${PV}/Lidarr.master.${PV}.linux-core-x86.tar.gz )
-	amd64? ( https://github.com/lidarr/Lidarr/releases/download/v${PV}/Lidarr.master.${PV}.linux-core-x64.tar.gz )
-	arm? ( https://github.com/lidarr/Lidarr/releases/download/v${PV}/Lidarr.master.${PV}.linux-core-arm.tar.gz )
-	arm64? ( https://github.com/lidarr/Lidarr/releases/download/v${PV}/Lidarr.master.${PV}.linux-core-arm64.tar.gz )
+	x86? ( https://github.com/lidarr/Lidarr/releases/download/v${PV}/Lidarr.develop.${PV}.linux-core-x86.tar.gz )
+	amd64? ( https://github.com/lidarr/Lidarr/releases/download/v${PV}/Lidarr.develop.${PV}.linux-core-x64.tar.gz )
+	arm? ( https://github.com/lidarr/Lidarr/releases/download/v${PV}/Lidarr.develop.${PV}.linux-core-arm.tar.gz )
+	arm64? ( https://github.com/lidarr/Lidarr/releases/download/v${PV}/Lidarr.develop.${PV}.linux-core-arm64.tar.gz )
 "
 
 DESCRIPTION="Lidarr is a music collection manager for Usenet and BitTorrent users."
@@ -17,7 +17,7 @@ HOMEPAGE="https://github.com/lidarr/Lidarr"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64"
+KEYWORDS="~amd64"
 RESTRICT="bindist strip test"
 
 RDEPEND="
