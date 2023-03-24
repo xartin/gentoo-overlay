@@ -4,7 +4,7 @@
 **Radarr, Sonarr and Prowlarr have been**
 **Merged in the official Gentoo repo**
 
-Current as of 24/01/2023
+Current as of 24/03/2023
 
 Maintainer: xartin / ali3nx
 * (https://github.com/xartin)
